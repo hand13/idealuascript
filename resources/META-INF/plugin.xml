@@ -1,0 +1,40 @@
+<idea-plugin>
+  <id>com.hand13.simple.anaction</id>
+  <name>esp</name>
+  <version>1.0</version>
+  <vendor email="1101738345@qq.com" url="hand13.github.io">hand13</vendor>
+
+  <description><![CDATA[
+  a extend plugin for idea with lua,this is not a import message
+    ]]></description>
+
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+      <toolWindow id="lua script" canCloseContents="true" anchor="right"
+                  factoryClass="com.hand13.action.LuaScriptWindowFactory" icon="PluginIcons.PLUGINICON"/>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+      <action id="com.hand13.action.MySingleAction" class="com.hand13.action.MySingleAction" text="myaction"
+              description="testing action" icon="PluginIcons.SIMPLEACTIONICON">
+          <add-to-group group-id="HelpMenu" anchor="last"/>
+      </action>
+  </actions>
+
+    <application-components>
+        <component>
+            <implementation-class>com.hand13.action.LuaApplicationComponent</implementation-class>
+        </component>
+    </application-components>
+</idea-plugin>
