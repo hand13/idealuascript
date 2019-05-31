@@ -32,7 +32,7 @@ public class LuaUtils {
         Globals globals = JsePlatform.standardGlobals();
         try {
             globals.load(in,"hack","t",globals).call();
-            LuaValue fun = globals.get(LuaValue.valueOf("test"));
+            LuaValue fun = globals.get(LuaValue.valueOf("main"));
             Varargs result = fun.invoke();
             LOG.info(result.arg1().tojstring());
         } catch (Exception e) {

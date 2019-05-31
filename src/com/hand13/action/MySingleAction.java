@@ -1,6 +1,5 @@
 package com.hand13.action;
 
-import com.hand13.lua.module.hello;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.diagnostic.Logger;
@@ -16,7 +15,6 @@ public class MySingleAction extends AnAction {
 
     @Override
     public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
-        hello.anActionEvent = anActionEvent;
         if (anActionEvent.getProject() != null) {
             Project project = anActionEvent.getProject();
             if (project.getWorkspaceFile() != null) {
